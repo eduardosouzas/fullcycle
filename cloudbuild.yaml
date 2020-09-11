@@ -1,0 +1,4 @@
+steps:
+- id: "Rodando docker-compose"
+  name: 'gcr.oi/$PROJECT_ID/docker-compose'
+  args: ['-f', 'docker-compose.cluidbuild.yaml', 'up', '-d']
