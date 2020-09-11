@@ -6,3 +6,7 @@ steps:
 - id: "Rodando docker PS"
   name: 'docker'
   args: ['ps']
+
+- id: "Rodando Composer"
+  name: 'docker'
+  args: ['exec', '-it', 'app', 'composer', 'install']
