@@ -4,7 +4,7 @@ steps:
   args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
 
 - id: "Chown in /var/www"
-  name: 'gcr.io/cloud-builders/docker'
+  name: 'docker'
   args: ['exec','-u','root','-t','app','chown','-R','www-data:www-data','/var/www']
 
 - id: "Rodando docker PS"
@@ -31,3 +31,6 @@ steps:
   name: 'docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/app-laravel:$SHORT_SHA', '-f', 'Dockerfile.prod', '.']
 
+- id:
+  name: 'docker'
+  args: ['push', 'grc.io/$PROJECT_ID/app-laravel:$SHORT_SHA']
