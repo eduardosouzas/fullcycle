@@ -45,7 +45,7 @@ steps:
       cat k8s/app/deployment-new.yaml;
 
 - id: 'Deploying k8s'
-  name: 'gcr.oi/cloud-builders/kubectl'
+  name: 'gcr.io/cloud-builders/kubectl'
   args:
     - 'apply'
     - '-f'
